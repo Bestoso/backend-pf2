@@ -1,0 +1,32 @@
+<div class="homepage">
+    <h2 class="title"> catalog </h2>
+    <div id="product-list-container" class="products__container">
+        {{#each products}}
+            <div id={{_id}} class="products__card">
+                {{#if thumbnails}}
+                    <div class="thumbnail__container">
+                        <img src="../../statics/img/{{thumbnails.[0].originalName}}" alt="">
+                    </div>
+                {{else}}
+                <div class="thumbnail__container">
+                    <p>no image</p>
+                </div>
+                {{/if}}
+                <div class="container">
+                    <div class="info__container">
+                        <p class="product__title">{{title}}</p>
+                        <p class="product__description">{{description}}</p>
+                        <p class="product__price">${{price}}</p>
+                    </div>
+                    <div class="btn__container">
+                        <button id="add-to-cart-button" onclick="addToCart(event)" class="btn__add">
+                            <i class='bx bx-cart-add'></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>
+
+<script src="/statics/js/index.js"></script>

@@ -1,0 +1,274 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font: "Oswald", sans-serif;
+  --vh: 1vh;
+  --vw: 1vw;
+  --font-size: 16px;
+  --color-bg: #fee5ca;
+  --color-bg-hover: #fef2e4;
+  --color-contrast: #b00e2f;
+  --color-slight-contrast: #f9e5e9;
+  --color-dark: #000;
+  --color-text: #b00e2f;
+  --color-placeholder: #b00e2f;
+  --color-light: #fff;
+  --color-overlay: rgb(254 229 202/75%);
+  --color-line: #e8e8e8;
+}
+
+body {
+  font-family: var(--font);
+  background-color: var(--color-bg);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 25px;
+  height: 5rem;
+  box-shadow: 0px 2px 5px rgba(232, 159, 159, 0.1);
+  margin-bottom: 10px;
+}
+.header .logo {
+  color: var(--color-text);
+  text-transform: uppercase;
+  font-size: 1.3rem;
+}
+.header .menu .list {
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+.header .menu .list .item {
+  margin-right: 20px;
+}
+.header .menu .list .item button {
+  cursor: pointer;
+  padding: 5px 15px;
+  border: 1px solid var(--color-text);
+  background-color: transparent;
+  text-decoration: none;
+  box-shadow: 2px 2px 0px 1px var(--color-text);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.header .menu .list .item button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: var(--color-text);
+  z-index: -1;
+  transition: all 0.3s ease;
+}
+.header .menu .list .item button:hover {
+  box-shadow: none;
+}
+.header .menu .list .item button:hover p {
+  color: var(--color-bg);
+}
+.header .menu .list .item button:hover:after {
+  width: 100%;
+}
+.header .menu .list .item button p {
+  font-size: 1rem;
+  font-family: var(--font);
+  color: var(--color-text);
+  transition: all 0.3s ease;
+}
+.header .menu .list .item .link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.homepage {
+  padding: 5px 25px;
+}
+.homepage .title {
+  text-transform: uppercase;
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-text);
+  margin-bottom: 2rem;
+  font-size: 6rem;
+}
+.homepage .products__container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.homepage .products__container .products__card {
+  width: 300px;
+  height: 400px;
+  background-color: var(--color-light);
+  overflow: hidden;
+  border-radius: 50px 0px 0px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.homepage .products__container .products__card .thumbnail__container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.homepage .products__container .products__card .thumbnail__container .img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.homepage .products__container .products__card .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 45px;
+}
+.homepage .products__container .products__card .container .info__container .product__title {
+  text-transform: uppercase;
+  color: var(--color-contrast);
+  font-size: 1.1rem;
+}
+.homepage .products__container .products__card .container .info__container .product__description {
+  color: rgba(0, 0, 0, 0.6039215686);
+  font-size: 1rem;
+}
+.homepage .products__container .products__card .container .info__container .product__price {
+  color: var(--color-contrast);
+}
+.homepage .products__container .products__card .container .btn__container .btn__add {
+  padding: 15px;
+  border: none;
+  background-color: var(--color-contrast);
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid var(--color-contrast);
+  position: relative;
+  overflow: hidden;
+}
+.homepage .products__container .products__card .container .btn__container .btn__add .bx {
+  color: var(--color-bg);
+  font-size: 1.7rem;
+  transition: all 0.3s ease-out;
+  z-index: 100;
+}
+.homepage .products__container .products__card .container .btn__container .btn__add:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-clip-path: circle(0% at 50% 50%);
+          clip-path: circle(0% at 50% 50%);
+  background-color: var(--color-bg);
+  transition: all 0.3s ease-out;
+  z-index: 1;
+}
+.homepage .products__container .products__card .container .btn__container .btn__add:hover .bx {
+  color: var(--color-contrast);
+}
+.homepage .products__container .products__card .container .btn__container .btn__add:hover:after {
+  -webkit-clip-path: circle(50% at 50% 50%);
+          clip-path: circle(50% at 50% 50%);
+}
+
+#chat-container {
+  background-color: var(--color-bg);
+  padding: 1rem;
+  margin: 1rem;
+  border-radius: 15px;
+  border: 1px solid var(--color-text);
+  height: 75vh;
+}
+
+#messages-section {
+  overflow-y: scroll;
+  height: 75%;
+}
+
+.message-box {
+  background-color: var(--color-light);
+  color: var(--color-contrast);
+  padding: 1rem;
+  width: 25rem;
+  border-radius: 15px;
+  margin: 0.5rem;
+}
+
+.me-message {
+  background-color: var(--color-contrast);
+  color: var(--color-bg);
+  margin-left: auto;
+}
+
+.user-tag {
+  font-weight: bolder;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.message-tag {
+  margin: 0;
+}
+
+.add-product-form {
+  display: flex;
+  padding: 1rem;
+  padding-left: 0;
+  width: 100%;
+}
+
+#message-input {
+  margin-left: 0;
+  margin-right: 1rem;
+  width: 85%;
+  border: none;
+  border-radius: 15px;
+  background-color: var(--color-light);
+  padding-left: 0.5rem;
+}
+
+#message-input::-moz-placeholder {
+  color: var(--color-text);
+}
+
+#message-input:-ms-input-placeholder {
+  color: var(--color-text);
+}
+
+#message-input::placeholder {
+  color: var(--color-text);
+}
+
+#message-input:focus {
+  outline: none;
+}
+
+.submit-input {
+  padding: 1rem 2rem;
+  width: 15%;
+  border: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background-color: var(--color-contrast);
+  color: var(--color-bg);
+  border-radius: 15px;
+}/*# sourceMappingURL=index.css.map */

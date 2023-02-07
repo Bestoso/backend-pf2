@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+    <link rel="stylesheet" href="/statics/css/index.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>{{title}}</title>
+</head>
+<body>
+    <header class="header">
+        <p class="logo"> Smedia </p>
+        <nav class="menu">
+            <ul class="list">
+                <li class="item">
+                    <a href="/" class="link">
+                        <p class="text"> Home </p>
+                    </a>
+                </li>
+                <li class="item">
+                    <a href="/chat" class="link">
+                        <p class="text"> Chat </p>
+                    </a>
+                </li>
+                <li class="item">
+                    <button id="see-cart-button" onclick="seeCart(event)">
+                        <p class="text"> Cart </p>
+                    </button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    {{{body}}}
+</body>
+</html>
